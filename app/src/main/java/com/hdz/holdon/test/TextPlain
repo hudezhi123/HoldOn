@@ -1,0 +1,111 @@
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Matrix;
+import android.graphics.RectF;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Message;
+import android.os.Parcelable;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.View;
+
+import androidx.core.app.SharedElementCallback;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
+import com.docin.ayouvideo.BuildConfig;
+import com.docin.ayouvideo.R;
+import com.docin.ayouvideo.action.service.ContinueService;
+import com.docin.ayouvideo.base.BaseActivity;
+import com.docin.ayouvideo.bean.story.PageStoryStatusBean;
+import com.docin.ayouvideo.bean.story.StoryStatusBean;
+import com.docin.ayouui.greendao.manager.UpStoryDaoManager;
+import com.docin.ayouvideo.data.eventbus.ContinueUploadEvent;
+import com.docin.ayouvideo.data.eventbus.ContinueUploadStoryEvent;
+import com.docin.ayouvideo.data.eventbus.LoginSuccessEvent;
+import com.docin.ayouvideo.data.eventbus.LogoutEvent;
+import com.docin.ayouvideo.data.eventbus.ServersErrorEvent;
+import com.docin.ayouvideo.data.eventbus.SlideHomeEvent;
+import com.docin.ayouvideo.data.eventbus.UploadStoryEvent;
+import com.docin.ayouvideo.data.model.ConfigInfoModel;
+import com.docin.ayouvideo.data.share.UMClick;
+import com.docin.ayouvideo.data.sharedpreferences.ConfigSp;
+import com.docin.ayouvideo.data.sharedpreferences.UserSp;
+import com.docin.ayouvideo.feature.home.ui.user.UserFragment;
+import com.docin.ayouvideo.feature.home.update.DownloadNotification;
+import com.docin.ayouvideo.feature.home.update.InstallApkHelper;
+import com.docin.ayouvideo.feature.home.update.UpdateEngine;
+import com.docin.ayouvideo.feature.login.ui.LoginActivity;
+import com.docin.ayouui.greendao.dao.UpStoryInfo;
+import com.docin.ayouvideo.feature.make.ui.StoryRecordActivity;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import butterknife.BindView;
+import okhttp3.RequestBody;
+
+import com.docin.ayouui.bottomnavigationbar.BottomNavigationBar;
+import com.docin.ayouui.bottomnavigationbar.BottomNavigationEntity;
+import com.docin.ayouvideo.feature.play.StoryPlayPreviewActivity;
+import com.docin.ayouvideo.http.request.RequestBodyGenerater;
+import com.docin.ayouvideo.http.rx.RxSchedulers;
+import com.docin.ayouvideo.http.rx.observers.BaseObserver;
+import com.docin.ayouvideo.http.service.HttpServiceFactory;
+import com.docin.ayouvideo.util.CommonUtils;
+import com.docin.ayouvideo.util.StatusBarUtils;
+import com.trello.rxlifecycle2.android.ActivityEvent;
+import com.umeng.analytics.MobclickAgent;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+import org.jetbrains.annotations.NotNull;
+
+/**
+ * MainActivity
+ */
+public class MainActivity extends BaseActivity {
+    private static final String TAG = "MainActivity";
+
+    BottomNavigationBar mBottomNavigationBar;
+    ViewPager mViewPager;
+
+    private UserFragment mUserFragment;
+    private HomeFragment mHomeFragment;
+
+    private UpdateEngine mUpdateEngine;
+    private DownloadNotification mDownloadNotification;
+
+
+
+   static class HomeContentHolder extends RecyclerView.ViewHolder {
+
+
+          TextView listView;
+
+          HomeContentHolder(@NonNull View itemView) {
+              super(itemView);
+              listView = itemView.findViewById(R.id.recyclerview_home);
+          }
+      }
+
+      SecondActivity.this
+
+      mAdapter.setOnItemClickListener(new Adapter.OnItemClickListener(){
+                public void onItemClick(int position){
+                }
+      });
+
+
+
+}

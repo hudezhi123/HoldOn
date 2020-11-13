@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ayou.MainActivity">
+
+    <com.hdz.holdon.ayou.customview.FixedViewPager
+        android:id="@+id/viewpager_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <RadioGroup
+        android:id="@+id/radiogroup_main"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_home_main"
+            style="@style/guide_bar_item"
+            android:checked="true"
+            android:drawableTop="@drawable/guide_home_img_selector"
+            android:text="@string/home_page" />
+
+        <ImageView
+            android:id="@+id/img_pic_main"
+            style="@style/guide_bar_item"
+            android:padding="@dimen/dp_4"
+            android:src="@mipmap/ic_guide_pic"
+            android:text="@string/home_page" />
+
+        <RadioButton
+            android:id="@+id/radio_mine_main"
+            style="@style/guide_bar_item"
+            android:drawableTop="@drawable/guide_mine_img_selector"
+            android:text="@string/mine" />
+    </RadioGroup>
+
+</LinearLayout>
